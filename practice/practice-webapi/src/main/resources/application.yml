@@ -1,0 +1,47 @@
+logging:
+  file:
+    name: practice-webapi.log
+  level:
+    com:
+      joel:
+        practice: trace
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.180:3306/practice?serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+
+mybatis-plus:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  global-config:
+    db-config:
+      logic-delete-value: true
+      logic-not-delete-value: false
+  type-enums-package: com.joel.practice.dao.entity.enums
+
+jwt:
+  secret-key: Q30oPe6KFcDHS+H70vXHYE52QdiDS0U5TmmJ5r2nTww=
+
+
+secure:
+  ignored:
+    urls:
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.jpg
+      - /admin/auth/**
+
+

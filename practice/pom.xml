@@ -33,7 +33,7 @@
         <jjwt.version>0.11.2</jjwt.version>
         <modelmapper.version>2.3.0</modelmapper.version>
         <commons-lang3.version>3.10</commons-lang3.version>
-        <jackson.version>2.11.0</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
         <hibernate-validator.version>6.0.2.Final</hibernate-validator.version>
     </properties>
 
